@@ -1,0 +1,41 @@
+body {
+  padding-bottom: 40px;
+  background: image-url('body-bg.png') #fafafa repeat;
+
+  .navbar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin-top: 55px;
+
+    .brand {
+      margin-top: -2px;
+      font-weight: bold;
+    }
+  }
+
+  .header-wrapper {
+    height: 160px;
+    background: image-url('header-bg.png') #2e7bcf repeat-x;
+  }
+}
+
+@media (max-width: 979px) {
+  .navbar-inner {
+    border-radius: 0;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .navbar-inner {
+    margin: -20px 0;
+  }
+
+  .header-wrapper {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}

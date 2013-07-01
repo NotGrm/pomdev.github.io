@@ -1,0 +1,26 @@
+---
+pageable: true
+---
+
+%h1
+  Archive de l'année
+  - case page_type
+  - when 'day'
+    = I18n.l Date.new(year, month, day), format: '%e %b %Y'
+  - when 'month'
+    = I18n.l Date.new(year, month, 1), format: '%b %Y'
+  - when 'year'
+    = year
+- if paginate
+  %p
+    Page #{page_number} sur #{num_pages}
+  - if prev_page
+    %p= link_to 'Page précédente', prev_page
+%ul
+  - page_articles.each_with_index do |article, i|
+    %li
+      = link_to article.title, article
+      %span= I18n.l article.date, format: '%e %b'
+- if paginate
+  - if next_page
+    %p= link_to 'Page suivante', next_page
