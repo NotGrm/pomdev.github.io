@@ -1,0 +1,14 @@
+#header {
+  .header-wrapper {
+    height: 160px;
+    background: image-url('header-bg.png') #2e7bcf repeat-x;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 767px) {
+    .header-wrapper {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+}

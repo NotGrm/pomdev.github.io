@@ -1,0 +1,15 @@
+@import "bootstrap/_variables";
+
+body {
+  padding-bottom: 40px;
+  background: image-url('body-bg.png') #fafafa repeat;
+
+  .nav-tag {
+    display: inline-block;
+  }
+
+  .article-date {
+    color: $grayLight;
+    font-size: $fontSizeSmall;
+  }
+}

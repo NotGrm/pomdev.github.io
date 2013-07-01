@@ -1,0 +1,15 @@
+%nav#nav
+  .navbar-wrapper
+    .container
+      .navbar.navbar-inverse
+        .navbar-inner
+          %a.btn.btn-navbar{data: {toggle: 'collapse', target: '.nav-collapse'}}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+
+          = link_to 'Pomdev', '/', class: 'brand'
+          .nav-collapse.collapse
+            %ul.nav
+              %li{class: ("active" if current_page.url == '/')}= link_to 'Articles', '/'
+              %li{class: ("active" if current_page.url == '/about/')}= link_to 'A propos', 'about'

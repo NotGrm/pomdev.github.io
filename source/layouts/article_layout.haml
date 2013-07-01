@@ -1,6 +1,6 @@
 - wrap_layout :layout do
   %article
-    %h2
-      = link_to current_article.title, current_article
-      %span= I18n.localize current_article.date, format: '%e %b'
+    %h2= link_to current_article.title, current_article
     = yield
+    = date_component(current_article.date)
+    = tag_component(current_article.tags)

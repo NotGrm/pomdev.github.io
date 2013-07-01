@@ -80,10 +80,14 @@ page "/feed.xml", :layout => false
 
 # Methods defined in the helpers block are available in templates
 helpers do
+  def date_component(date)
+    '<span class="article-date">' + I18n.localize(date, format: '%e %B %Y') + '</span>'
+  end
+
   def tag_component(tags)
     component = ""
     tags.each do |tag, articles|
-      component += "<li class=nav-tag>
+      component += "<li class='nav-tag'>
         <span>
           <a class='label label-important' href='#{tag_path(tag)}'>
             <i class='icon-tag icon-white'></i>

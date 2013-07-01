@@ -1,0 +1,22 @@
+#nav {
+  .navbar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin-top: 55px;
+
+    .brand {
+      margin-top: -2px;
+      font-weight: bold;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .navbar-inner {
+      border-radius: 0;
+      margin: -55px 0;
+    }
+  }
+}
