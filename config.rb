@@ -27,7 +27,6 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :git
-  deploy.remote = "https://github.com/pomdev/pomdev.github.io"
   deploy.branch = "master"
 end
 
