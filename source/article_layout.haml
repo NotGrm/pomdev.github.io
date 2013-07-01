@@ -1,6 +1,0 @@
-- wrap_layout :layout do
-  %article
-    %h2
-      = link_to current_page.title, current_page
-      %span= I18n.localize current_page.date, format: '%e %b'
-    = yield
