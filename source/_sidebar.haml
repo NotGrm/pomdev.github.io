@@ -6,9 +6,9 @@
         %li
           %span
             = link_to article.title, article
-
+            
+    %hr.soften
     %ul.nav.nav-list
-      %li.divider.soften
       %li.nav-header Par année
       - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
         %li
@@ -16,7 +16,7 @@
             = link_to year, blog_year_path(year)
             (#{articles.size})
 
+    %hr.soften
     %ul.nav.nav-list
-      %li.divider.soften
       %li.nav-header Tags
       = tag_component(blog.tags)
