@@ -1,14 +1,58 @@
 #header {
   .header-wrapper {
     height: 160px;
-    background: image-url('header-bg.png') #2e7bcf repeat-x;
+    //background: image-url('header-bg.png') #2e7bcf repeat-x;
     margin-bottom: 40px;
-  }
+    position: relative;
 
-  @media (max-width: 767px) {
-    .header-wrapper {
+    @media (max-width: 767px) {
+      height: 160px - 42px;
+      margin-top: 42px;
       margin-left: -20px;
       margin-right: -20px;
+    }
+
+    #logo {
+      position: absolute;
+      left: 12px;
+      top: 15px;
+      max-height: 100px;
+    }
+
+    #parralax-illustration {
+      position: absolute;
+      width: 400px;
+      right: 300px;
+
+      @media (max-width: 1199px) {
+        right: 200px;
+      }
+
+      @media (max-width: 979px) {
+        right: 150px;
+      }
+
+      @media (max-width: 767px) {
+        right: 0;
+      }
+
+      #leaf1 {
+        position: absolute;
+          top: 45px;
+          left: 70%;
+      }
+
+      #leaf2 {
+        position: absolute;
+          top: 15px;
+          left: 10%;
+      }
+
+      #leaf3 {
+        position: absolute;
+          top: 65px;
+          left: 40%;
+      }
     }
   }
 }
