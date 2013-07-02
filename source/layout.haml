@@ -17,6 +17,8 @@
     %section#main{:role => "main"}
       .container
         .row
+          = yield_content(:jumbotron)
+
           .row.span9
             = yield
 

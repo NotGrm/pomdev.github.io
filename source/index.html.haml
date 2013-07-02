@@ -3,14 +3,17 @@ pageable: true
 per_page: 10
 ---
 
-.row.featured-articles
-  - page_articles.take(3).each do |article|
-    .span3
-      = image_tag article.data.image unless article.data.image.blank?
-      %h2= link_to article.title, article
-      %p= article.summary(100)
 
-%hr.soften
+- content_for :jumbotron do
+  .span12
+    .row.featured-articles
+      - page_articles.take(3).each do |article|
+        .span4
+          = image_tag article.data.image unless article.data.image.blank?
+          %h2= link_to article.title, article
+          %p= article.summary(100)
+    %hr.soften
+
 
 - if paginate
   %p Page #{page_number} sur #{num_pages}
