@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Pomdev</title>
+  <subtitle>La réference de développement Objective-C en français !</subtitle>
+  <id>http://www.pomdev.fr/</id>
+  <link href="http://www.pomdev.fr/"/>
+  <link href="http://www.pomdev.fr/feed.xml" rel="self"/>
+  <updated>2013-07-02T05:31:00Z</updated>
+  <author>
+    <name>Pierrick Rouxel</name>
+  </author>
+  <entry>
+    <title>Le test</title>
+    <link rel="alternate" href="/2013/07/02/les-tests/"/>
+    <id>/2013/07/02/les-tests/</id>
+    <published>2013-07-02T05:31:00Z</published>
+    <updated>2013-07-02T05:31:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h3 id='questce_que_le_test_'&gt;Qu&amp;#8217;est-ce que le test ?&lt;/h3&gt;
+
+&lt;p&gt;Le test en programmation est une pratique qui consiste à valider son code par l&amp;#8217;écriture de fonctions simples assurant qu&amp;#8217;une fonctionnalité répond correctement à ce que l&amp;#8217;on attend d&amp;#8217;elle.&lt;/p&gt;
+
+&lt;p&gt;Il existe plusieurs manières d&amp;#8217;aborder le test dans un programme. Deux d&amp;#8217;entre elles sont largement pratiquées.&lt;/p&gt;
+
+&lt;p&gt;La première consiste à développer la fonctionnalité puis à la valider par un test.&lt;/p&gt;
+
+&lt;p&gt;La seconde propose de créer le test puis d&amp;#8217;écrire la fonctionnalité pour y répondre. On appel cette pratique le &lt;strong&gt;TDD&lt;/strong&gt; ( Test Driven Development ) ou en français le développement conduit par les tests. Dans ce cas les fonctionnalités sont souvent appelées &lt;strong&gt;specs&lt;/strong&gt; ou spécifications pour correspondre à la logique de conception.&lt;/p&gt;
+
+&lt;p&gt;J&amp;#8217;ai une nette préférence pour cette dernière approche. Une fois le test rédigé le développeur est contraint d&amp;#8217;y répondre le plus directement possible. Il risque moins de se disperser. De plus ce type de test force une réflexion structurelle préalable qui favorise une qualité de code supérieur.&lt;/p&gt;
+
+&lt;h3 id='le_refactoring'&gt;Le refactoring&lt;/h3&gt;
+
+&lt;p&gt;Une pratique directement liée au TDD est le refactoring. Le développeur va tout d&amp;#8217;abord écrire le code pour répondre le plus rapidement à la spec. Ensuite il cherchera à optimiser celui ci de manière à continuer à répondre à la spec tout en factorisant au maximum. Ici il s&amp;#8217;agit d&amp;#8217;une approche qualitative plus que fonctionnelle.&lt;/p&gt;
+
+&lt;h3 id='lutter_contre_la_rgression'&gt;Lutter contre la régression&lt;/h3&gt;
+
+&lt;p&gt;Un avantage capital dans le test est sa capacité à évaluer la régression. Lors du développement de nouvelles fonctionnalités il arrive que le code existant soir impacté. En l&amp;#8217;absence de test il est fort probable qu&amp;#8217;une erreur passe inaperçue. La fonctionnalité jusqu&amp;#8217;à lors parfaitement stable adoptera un comportement différent et sera alors à l&amp;#8217;origine d&amp;#8217;un bug de régression. Un code préalablement testé avertira que le comportement de la fonctionnalité à été modifé et le développeur pourra prévenir le bug.&lt;/p&gt;
+
+&lt;h3 id='corriger_une_bonne_fois_pour_toutes'&gt;Corriger une bonne fois pour toutes&lt;/h3&gt;
+
+&lt;p&gt;Lorsque l&amp;#8217;on rédige un test et qu l&amp;#8217;on développe une fonctionnalité il arrive bien souvent que l&amp;#8217;on ne pense pas à un comportement particulier. Dans ce cas le test sera valide mais un bug sera présent. Lorsque le problème sera signalé le développeur ajoutera au test le cas en question et corrigera le programme. Il sera donc impossible de reproduire à nouveau le bug.&lt;/p&gt;
+
+&lt;h3 id='que_tester_'&gt;Que tester ?&lt;/h3&gt;
+
+&lt;p&gt;Selon le besoin on distingue plusieurs types de tests. Les deux principaux sont les suivants :&lt;/p&gt;
+
+&lt;h4 id='le_test_unitaire'&gt;Le test unitaire&lt;/h4&gt;
+
+&lt;p&gt;Il valide une fonctionnalité précise en dehors du contexte de l&amp;#8217;application. Par exemple ma classe &lt;em&gt;Opération&lt;/em&gt; contient une méthode &lt;em&gt;addition&lt;/em&gt; ( c&amp;#8217;est un exemple, prière de ne pas développer en français :) ). Je vais créer une test qui valide que 1 + 2 = 3. C&amp;#8217;est ce que l&amp;#8217;on appel un test unitaire. Il ne tient pas compte de l&amp;#8217;état de l&amp;#8217;application.&lt;/p&gt;
+
+&lt;h4 id='le_test_dintgration'&gt;Le test d&amp;#8217;intégration&lt;/h4&gt;
+
+&lt;p&gt;Contrairement au précédent ce type de test est rattaché à l&amp;#8217;éxecution de l&amp;#8217;application. Par exemple je souhaite vérifier que le clique sur mon bouton &lt;em&gt;calculer&lt;/em&gt; renvoi le résultat au contrôleur chargé de son affichage.&lt;/p&gt;
+
+&lt;h3 id='en_objectivec'&gt;En Objective-C&lt;/h3&gt;
+
+&lt;p&gt;Il existe plusieurs frameworks de test pour les projets Objective-C. Ne souhaitant pas sortir des sentiers battus je vais vous présenter celui fourni par Apple : &lt;strong&gt;OCUnit&lt;/strong&gt;. Comme son nom l&amp;#8217;indique ce framework permet d&amp;#8217;effectuer des tests unitaires mais aussi des tests d&amp;#8217;intégration. Il est intégré à XCode depuis la version 4.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Toto</title>
+    <link rel="alternate" href="/2013/06/30/toto/"/>
+    <id>/2013/06/30/toto/</id>
+    <published>2013-06-30T21:45:00Z</published>
+    <updated>2013-06-30T21:45:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Totototo&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Les tests</title>
+    <link rel="alternate" href="/2013/06/30/les-tests/"/>
+    <id>/2013/06/30/les-tests/</id>
+    <published>2013-06-30T21:45:00Z</published>
+    <updated>2013-06-30T21:45:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Totototo&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Changement de formule</title>
+    <link rel="alternate" href="/2013/06/30/changement-de-formule/"/>
+    <id>/2013/06/30/changement-de-formule/</id>
+    <published>2013-06-30T10:23:00Z</published>
+    <updated>2013-06-30T10:23:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;A partir d&amp;#8217;aujourd&amp;#8217;hui Pomdev change de formule. Desormais le blog sera hébergé sur les &lt;a href='http://pages.github.com'&gt;github pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Le site est généré grâce à &lt;a href='http://middlemanapp.com'&gt;middleman&lt;/a&gt; le compilateur de site statiques sous stéroides.&lt;/p&gt;
+
+&lt;p&gt;Les raisons que me poussent à fait ce choix sont simples :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Le coût non négligeable de l&amp;#8217;herbergment&lt;/li&gt;
+
+&lt;li&gt;Le coté &amp;#8220;usine à gaz&amp;#8221; de wordpress qui dans mon cas n&amp;#8217;est pas utile&lt;/li&gt;
+
+&lt;li&gt;Je suis un geek et j&amp;#8217;aime l&amp;#8217;approche développeur des github pages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Malgrès un emploi du temps bien chargé je m&amp;#8217;efforcerai de publier au moins un article par semaine.&lt;/p&gt;</content>
+  </entry>
+</feed>

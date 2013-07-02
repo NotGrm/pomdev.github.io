@@ -1,0 +1,17 @@
+/* line 2, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/nav.css.scss */
+#nav .navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: 118px; }
+  /* line 10, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/nav.css.scss */
+  #nav .navbar-wrapper .brand {
+    margin-top: -2px;
+    font-weight: bold; }
+@media (max-width: 767px) {
+  /* line 17, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/nav.css.scss */
+  #nav .navbar-inner {
+    border-radius: 0;
+    margin: -118px 0; } }

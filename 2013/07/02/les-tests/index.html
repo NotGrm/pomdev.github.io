@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta title='Le test'>
+    <meta description='La réference du développement Objective-C en français !'>
+    <meta charset='utf-8'>
+    <meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <link href="/assets/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/assets/javascripts/blog.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <header id='header'>
+      <div class='header-wrapper'>
+        <div id='parralax-illustration'>
+          <img id="leaf1" data-xrange="100" data-yrange="30" src="/assets/images/leaf1.png" />
+          <img id="leaf2" data-xrange="60" data-yrange="60" src="/assets/images/leaf2.png" />
+          <img id="leaf3" data-xrange="30" data-yrange="20" src="/assets/images/leaf3.png" />
+        </div>
+        <img id="logo" src="/assets/images/pomdev-logo-retina.png" />
+      </div>
+    </header>
+    <nav id='nav'>
+      <div class='navbar-wrapper'>
+        <div class='container'>
+          <div class='navbar navbar-inverse'>
+            <div class='navbar-inner'>
+              <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+              </a>
+              <!-- = link_to 'Pomdev', '/', class: 'brand' -->
+              <div class='nav-collapse collapse'>
+                <ul class='nav'>
+                  <li><a href="/">Accueil</a></li>
+                  <li><a href="about">A propos</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section id='main' role='main'>
+      <div class='container'>
+        <div class='row'>
+          <div class='row span9'>
+            <article>
+              <h2><a href="/2013/07/02/les-tests/">Le test</a></h2>
+              <span class="article-info">Le  2 Juillet 2013</span>
+              <p></p>
+              <h3 id='questce_que_le_test_'>Qu&#8217;est-ce que le test ?</h3>
+              
+              <p>Le test en programmation est une pratique qui consiste à valider son code par l&#8217;écriture de fonctions simples assurant qu&#8217;une fonctionnalité répond correctement à ce que l&#8217;on attend d&#8217;elle.</p>
+              
+              <p>Il existe plusieurs manières d&#8217;aborder le test dans un programme. Deux d&#8217;entre elles sont largement pratiquées.</p>
+              
+              <p>La première consiste à développer la fonctionnalité puis à la valider par un test.</p>
+              
+              <p>La seconde propose de créer le test puis d&#8217;écrire la fonctionnalité pour y répondre. On appel cette pratique le <strong>TDD</strong> ( Test Driven Development ) ou en français le développement conduit par les tests. Dans ce cas les fonctionnalités sont souvent appelées <strong>specs</strong> ou spécifications pour correspondre à la logique de conception.</p>
+              
+              <p>J&#8217;ai une nette préférence pour cette dernière approche. Une fois le test rédigé le développeur est contraint d&#8217;y répondre le plus directement possible. Il risque moins de se disperser. De plus ce type de test force une réflexion structurelle préalable qui favorise une qualité de code supérieur.</p>
+              
+              <h3 id='le_refactoring'>Le refactoring</h3>
+              
+              <p>Une pratique directement liée au TDD est le refactoring. Le développeur va tout d&#8217;abord écrire le code pour répondre le plus rapidement à la spec. Ensuite il cherchera à optimiser celui ci de manière à continuer à répondre à la spec tout en factorisant au maximum. Ici il s&#8217;agit d&#8217;une approche qualitative plus que fonctionnelle.</p>
+              
+              <h3 id='lutter_contre_la_rgression'>Lutter contre la régression</h3>
+              
+              <p>Un avantage capital dans le test est sa capacité à évaluer la régression. Lors du développement de nouvelles fonctionnalités il arrive que le code existant soir impacté. En l&#8217;absence de test il est fort probable qu&#8217;une erreur passe inaperçue. La fonctionnalité jusqu&#8217;à lors parfaitement stable adoptera un comportement différent et sera alors à l&#8217;origine d&#8217;un bug de régression. Un code préalablement testé avertira que le comportement de la fonctionnalité à été modifé et le développeur pourra prévenir le bug.</p>
+              
+              <h3 id='corriger_une_bonne_fois_pour_toutes'>Corriger une bonne fois pour toutes</h3>
+              
+              <p>Lorsque l&#8217;on rédige un test et qu l&#8217;on développe une fonctionnalité il arrive bien souvent que l&#8217;on ne pense pas à un comportement particulier. Dans ce cas le test sera valide mais un bug sera présent. Lorsque le problème sera signalé le développeur ajoutera au test le cas en question et corrigera le programme. Il sera donc impossible de reproduire à nouveau le bug.</p>
+              
+              <h3 id='que_tester_'>Que tester ?</h3>
+              
+              <p>Selon le besoin on distingue plusieurs types de tests. Les deux principaux sont les suivants :</p>
+              
+              <h4 id='le_test_unitaire'>Le test unitaire</h4>
+              
+              <p>Il valide une fonctionnalité précise en dehors du contexte de l&#8217;application. Par exemple ma classe <em>Opération</em> contient une méthode <em>addition</em> ( c&#8217;est un exemple, prière de ne pas développer en français :) ). Je vais créer une test qui valide que 1 + 2 = 3. C&#8217;est ce que l&#8217;on appel un test unitaire. Il ne tient pas compte de l&#8217;état de l&#8217;application.</p>
+              
+              <h4 id='le_test_dintgration'>Le test d&#8217;intégration</h4>
+              
+              <p>Contrairement au précédent ce type de test est rattaché à l&#8217;éxecution de l&#8217;application. Par exemple je souhaite vérifier que le clique sur mon bouton <em>calculer</em> renvoi le résultat au contrôleur chargé de son affichage.</p>
+              
+              <h3 id='en_objectivec'>En Objective-C</h3>
+              
+              <p>Il existe plusieurs frameworks de test pour les projets Objective-C. Ne souhaitant pas sortir des sentiers battus je vais vous présenter celui fourni par Apple : <strong>OCUnit</strong>. Comme son nom l&#8217;indique ce framework permet d&#8217;effectuer des tests unitaires mais aussi des tests d&#8217;intégration. Il est intégré à XCode depuis la version 4.</p>
+              
+            </article>
+          </div>
+          <div class='row span3'>
+            <aside id='sidebar'>
+              <div class='sidebar-nav'>
+                <ul class='nav nav-list'>
+                  <li class='nav-header'>Articles Récents</li>
+                  <li>
+                    <span>
+                      <a href="/2013/07/02/les-tests/">Le test</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="/2013/06/30/toto/">Toto</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="/2013/06/30/les-tests/">Les tests</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="/2013/06/30/changement-de-formule/">Changement de formule</a>
+                    </span>
+                  </li>
+                </ul>
+                <hr class='soften'>
+                <ul class='nav nav-list'>
+                  <li class='nav-header'>Par année</li>
+                  <li>
+                    <span>
+                      <a href="/2013/">2013</a>
+                      (4)
+                    </span>
+                  </li>
+                </ul>
+                <hr class='soften'>
+                <ul class='nav nav-list'>
+                  <li class='nav-header'>Tags</li>
+                  <li class='nav-tag'>
+                          <span>
+                            <a class='label label-important' href='/tags/pomdev/'>
+                              <i class='icon-tag icon-white'></i>
+                              pomdev (1)
+                            </a>
+                          </span>
+                        </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id='footer'>
+      <div class='container'>
+        <hr class='soften'>
+        <p>
+          Copyright © Pomdev tous droits réservés.
+          Créé par <a href="about">Pierrick Rouxel</a>.
+          Propulsé par
+          <a href='http://middlemanapp.com/'>Middleman</a>
+          et
+          <a href='http://twitter.github.io/bootstrap/'>Bootstrap.</a>
+          Hebergé par
+          <a href='http://pages.github.com/'>Github Pages.</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+

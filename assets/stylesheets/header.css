@@ -1,0 +1,50 @@
+/* line 2, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+#header .header-wrapper {
+  height: 160px;
+  margin-bottom: 40px;
+  position: relative; }
+  @media (max-width: 767px) {
+    /* line 2, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+    #header .header-wrapper {
+      height: 118px;
+      margin-top: 42px;
+      margin-left: -20px;
+      margin-right: -20px; } }
+  /* line 15, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+  #header .header-wrapper #logo {
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    max-height: 100px; }
+  /* line 22, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+  #header .header-wrapper #parralax-illustration {
+    position: absolute;
+    width: 400px;
+    right: 300px; }
+    @media (max-width: 1199px) {
+      /* line 22, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+      #header .header-wrapper #parralax-illustration {
+        right: 200px; } }
+    @media (max-width: 979px) {
+      /* line 22, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+      #header .header-wrapper #parralax-illustration {
+        right: 150px; } }
+    @media (max-width: 767px) {
+      /* line 22, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+      #header .header-wrapper #parralax-illustration {
+        right: 0; } }
+    /* line 39, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+    #header .header-wrapper #parralax-illustration #leaf1 {
+      position: absolute;
+      top: 45px;
+      left: 70%; }
+    /* line 45, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+    #header .header-wrapper #parralax-illustration #leaf2 {
+      position: absolute;
+      top: 15px;
+      left: 10%; }
+    /* line 51, /Users/pr/Desktop/pomdev.github.io/source/assets/stylesheets/header.css.scss */
+    #header .header-wrapper #parralax-illustration #leaf3 {
+      position: absolute;
+      top: 65px;
+      left: 40%; }
