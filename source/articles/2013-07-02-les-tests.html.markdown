@@ -1,0 +1,37 @@
+---
+title: Le test
+date: 2013-07-02 07:31 CEST
+tags:
+---
+
+### Qu'est-ce que le test ?
+Le test en programmation est une pratique qui consiste à valider son code par l'écriture de fonctions simples assurant qu'une fonctionnalité répond correctement à ce que l'on attend d'elle. 
+
+Il existe plusieurs manières d'aborder le test dans un programme. Deux d'entre elles sont largement pratiquées. 
+
+La première consiste à développer la fonctionnalité puis à la valider par un test. 
+
+La seconde propose de créer le test puis d'écrire la fonctionnalité pour y répondre. On appel cette pratique le **TDD** ( Test Driven Development ) ou en français le développement conduit par les tests. Dans ce cas les fonctionnalités sont souvent appelées **specs** ou spécifications pour correspondre à la logique de conception. 
+
+J'ai une nette préférence pour cette dernière approche. Une fois le test rédigé le développeur est contraint d'y répondre le plus directement possible. Il risque moins de se disperser. De plus ce type de test force une réflexion structurelle préalable qui favorise une qualité de code supérieur. 
+
+### Le refactoring
+Une pratique directement liée au TDD est le refactoring. Le développeur va tout d'abord écrire le code pour répondre le plus rapidement à la spec. Ensuite il cherchera à optimiser celui ci de manière à continuer à répondre à la spec tout en factorisant au maximum. Ici il s'agit d'une approche qualitative plus que fonctionnelle. 
+
+### Lutter contre la régression
+Un avantage capital dans le test est sa capacité à évaluer la régression. Lors du développement de nouvelles fonctionnalités il arrive que le code existant soir impacté. En l'absence de test il est fort probable qu'une erreur passe inaperçue. La fonctionnalité jusqu'à lors parfaitement stable adoptera un comportement différent et sera alors à l'origine d'un bug de régression. Un code préalablement testé avertira que le comportement de la fonctionnalité à été modifé et le développeur pourra prévenir le bug. 
+
+### Corriger une bonne fois pour toutes
+Lorsque l'on rédige un test et qu l'on développe une fonctionnalité il arrive bien souvent que l'on ne pense pas à un comportement particulier. Dans ce cas le test sera valide mais un bug sera présent. Lorsque le problème sera signalé le développeur ajoutera au test le cas en question et corrigera le programme. Il sera donc impossible de reproduire à nouveau le bug. 
+
+### Que tester ?
+Selon le besoin on distingue plusieurs types de tests. Les deux principaux sont les suivants :
+
+#### Le test unitaire
+Il valide une fonctionnalité précise en dehors du contexte de l'application. Par exemple ma classe *Opération* contient une méthode *addition* ( c'est un exemple, prière de ne pas développer en français :) ). Je vais créer une test qui valide que 1 + 2 = 3. C'est ce que l'on appel un test unitaire. Il ne tient pas compte de l'état de l'application. 
+
+#### Le test d'intégration
+Contrairement au précédent ce type de test est rattaché à l'éxecution de l'application. Par exemple je souhaite vérifier que le clique sur mon bouton *calculer* renvoi le résultat au contrôleur chargé de son affichage. 
+
+### En Objective-C
+Il existe plusieurs frameworks de test pour les projets Objective-C. Ne souhaitant pas sortir des sentiers battus je vais vous présenter celui fourni par Apple : **OCUnit**. Comme son nom l'indique ce framework permet d'effectuer des tests unitaires mais aussi des tests d'intégration. Il est intégré à XCode depuis la version 4. 

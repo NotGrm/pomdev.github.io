@@ -1,6 +1,9 @@
 - wrap_layout :layout do
   %article
     %h2= link_to current_article.title, current_article
+    = article_info_component(current_article)
+    
+    %p= image_tag current_article.data.image unless current_article.data.image.blank?
+
     = yield
-    = date_component(current_article.date)
     = tag_component(current_article.tags)

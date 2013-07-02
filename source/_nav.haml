@@ -8,8 +8,8 @@
             %span.icon-bar
             %span.icon-bar
 
-          = link_to 'Pomdev', '/', class: 'brand'
+          /= link_to 'Pomdev', '/', class: 'brand'
           .nav-collapse.collapse
             %ul.nav
-              %li{class: ("active" if current_page.url == '/')}= link_to 'Articles', '/'
+              %li{class: ("active" if current_page.url == '/')}= link_to 'Accueil', '/'
               %li{class: ("active" if current_page.url == '/about/')}= link_to 'A propos', 'about'

@@ -33,8 +33,8 @@ end
 activate :i18n, mount_at_root: :fr
 activate :directory_indexes
 
-page "articles/*", :layout => :article_layout
-page "/feed.xml", :layout => false
+page "articles/*", layout: :article_layout
+page "feed.xml", layout: false
 
 ### 
 # Compass
@@ -80,8 +80,8 @@ page "/feed.xml", :layout => false
 
 # Methods defined in the helpers block are available in templates
 helpers do
-  def date_component(date)
-    '<span class="article-date">' + I18n.localize(date, format: '%e %B %Y') + '</span>'
+  def article_info_component(article)
+    '<span class="article-info">Le ' + I18n.localize(article.date, format: '%e %B %Y') + '</span>'
   end
 
   def tag_component(tags)
